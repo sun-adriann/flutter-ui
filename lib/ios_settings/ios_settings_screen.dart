@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 
-class IosSettingsPage extends StatelessWidget {
-  const IosSettingsPage({Key? key}) : super(key: key);
+class IosSettingsScreen extends StatelessWidget {
+  const IosSettingsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -324,6 +324,5 @@ class IosSettingsPage extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
