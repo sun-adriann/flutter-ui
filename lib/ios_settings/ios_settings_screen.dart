@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/ios_popup/ios_popup_screen.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class IosSettingsScreen extends StatelessWidget {
@@ -7,12 +8,17 @@ class IosSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void goToIosPopupScreen() {
+      Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (_) => const IosPopupScreen()));
+    }
+
     return CupertinoPageScaffold(
       child: CustomScrollView(
         slivers: [
           const CupertinoSliverNavigationBar(
             border: null,
             backgroundColor: Color(0xFFF2F2F8),
+            transitionBetweenRoutes: true,
             largeTitle: Text('Settings'),
           ),
           SliverList(
@@ -67,17 +73,18 @@ class IosSettingsScreen extends StatelessWidget {
                   applicationType: ApplicationType.cupertino,
                   sections: [
                     SettingsSection(
-                      margin: const EdgeInsetsDirectional.fromSTEB(
-                          0, 12.0, 0, 16.0),
+                      margin: const EdgeInsetsDirectional.fromSTEB(0, 12.0, 0, 16.0),
                       tiles: [
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: Colors.deepPurple,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.hourglass_empty,
@@ -96,13 +103,15 @@ class IosSettingsScreen extends StatelessWidget {
                       ),
                       tiles: [
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: Colors.grey,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.settings_outlined,
@@ -113,13 +122,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('General'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: CupertinoColors.activeBlue,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.settings_accessibility_rounded,
@@ -129,13 +140,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('Accessibility'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: CupertinoColors.activeBlue,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.back_hand,
@@ -154,13 +167,15 @@ class IosSettingsScreen extends StatelessWidget {
                       ),
                       tiles: [
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: BoxDecoration(
                               color: Colors.grey.shade600,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: const BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.key,
@@ -179,13 +194,15 @@ class IosSettingsScreen extends StatelessWidget {
                       ),
                       tiles: [
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: Colors.blue,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.public,
@@ -196,13 +213,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('Safari'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: Colors.pink,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.newspaper,
@@ -213,13 +232,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('News'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: BoxDecoration(
                               color: Colors.grey.shade800,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: const BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.translate_outlined,
@@ -230,13 +251,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('Translate'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: BoxDecoration(
                               color: Colors.greenAccent.shade700,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: const BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.map_rounded,
@@ -247,13 +270,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('Maps'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: BoxDecoration(
                               color: Colors.purple.shade900,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: const BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: Icon(
                               Icons.short_text,
@@ -264,13 +289,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('Shortcuts'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.favorite,
@@ -281,13 +308,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('Health'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: BoxDecoration(
                               color: Colors.pink.shade900,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: const BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.light_mode,
@@ -298,13 +327,15 @@ class IosSettingsScreen extends StatelessWidget {
                           title: const Text('Siri & Search'),
                         ),
                         SettingsTile.navigation(
+                          onPressed: (_) {
+                            goToIosPopupScreen();
+                          },
                           leading: Container(
                             width: 26.0,
                             height: 26.0,
                             decoration: const BoxDecoration(
                               color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6.0)),
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
                             ),
                             child: const Icon(
                               Icons.stay_primary_landscape_outlined,
