@@ -1,17 +1,18 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_ui/ios_popup/ios_popup_screen.dart';
 import 'package:settings_ui/settings_ui.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class IosSettingsScreen extends StatelessWidget {
+class IosSettingsScreen extends StatefulWidget {
   const IosSettingsScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    void goToIosPopupScreen() {
-      Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (_) => const IosPopupScreen()));
-    }
+  State<IosSettingsScreen> createState() => _IosSettingsScreenState();
+}
 
+class _IosSettingsScreenState extends State<IosSettingsScreen> {
+  @override
+  Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: CustomScrollView(
         slivers: [
@@ -69,6 +70,7 @@ class IosSettingsScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: SettingsList(
                   shrinkWrap: true,
+                  platform: DevicePlatform.iOS,
                   physics: const NeverScrollableScrollPhysics(),
                   applicationType: ApplicationType.cupertino,
                   sections: [
@@ -355,5 +357,9 @@ class IosSettingsScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void goToIosPopupScreen() {
+    Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (_) => const IosPopupScreen()));
   }
 }
