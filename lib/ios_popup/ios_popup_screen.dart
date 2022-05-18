@@ -1,52 +1,15 @@
+import 'package:cupertino_lists/cupertino_lists.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class IosPopupScreen extends StatelessWidget {
+class IosPopupScreen extends StatefulWidget {
   const IosPopupScreen({Key? key}) : super(key: key);
 
-  Widget _tabBuilder(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: CustomScrollView(
-        slivers: [
-          CupertinoSliverNavigationBar(
-            border: null,
-            largeTitle: const Text('Recents'),
-            transitionBetweenRoutes: true,
-            backgroundColor: const Color(0xFFF2F2F8),
-            trailing: GestureDetector(
-                onTap: () {},
-                child: SizedBox(
-                  child: CupertinoContextMenu(
-                    actions: [
-                      CupertinoContextMenuAction(
-                        child: const Text('Action one'),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      CupertinoContextMenuAction(
-                        child: const Text('Action two'),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                    child: const Icon(CupertinoIcons.square_grid_2x2),
-                  ),
-                )),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Padding(
-                padding: const EdgeInsets.fromLTRB(18.0, 4.0, 18.0, 0),
-                child: CupertinoSearchTextField(controller: TextEditingController()),
-              ),
-            ]),
-          ),
-        ],
-      ),
-    );
-  }
+  @override
+  State<IosPopupScreen> createState() => _IosPopupScreenState();
+}
 
+class _IosPopupScreenState extends State<IosPopupScreen> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -66,6 +29,183 @@ class IosPopupScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _tabBuilder(BuildContext context) {
+    return CupertinoPageScaffold(
+      child: CustomScrollView(
+        slivers: [
+          CupertinoSliverNavigationBar(
+            border: null,
+            transitionBetweenRoutes: true,
+            largeTitle: const Text('Recents'),
+            backgroundColor: const Color(0xFFF2F2F8),
+            trailing: GestureDetector(
+              onTap: () async {
+                await showDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  barrierColor: CupertinoColors.inactiveGray.withOpacity(0.4),
+                  builder: (context) {
+                    return Stack(
+                      children: [
+                        Positioned(
+                          right: 0.5,
+                          top: 28,
+                          child: SizedBox(
+                            width: 300,
+                            child: Column(
+                              children: [
+                                CupertinoListSection.insetGrouped(
+                                  dividerMargin: -42,
+                                  backgroundColor: Colors.transparent,
+                                  children: [
+                                    CupertinoListTile.notched(
+                                      title: const Text('Icons'),
+                                      leadingToTitle: 2.0,
+                                      leading: const Icon(
+                                        CupertinoIcons.check_mark,
+                                        color: CupertinoColors.black,
+                                        size: 18.0,
+                                      ),
+                                      trailing: const Icon(
+                                        CupertinoIcons.square_grid_2x2,
+                                        color: CupertinoColors.black,
+                                        size: 22.0,
+                                      ),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    CupertinoListTile.notched(
+                                      title: const Text('List'),
+                                      leadingToTitle: 2.0,
+                                      leading: const SizedBox(),
+                                      trailing: const Icon(
+                                        CupertinoIcons.list_bullet,
+                                        color: CupertinoColors.black,
+                                        size: 22.0,
+                                      ),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 0.5,
+                          top: 140,
+                          child: SizedBox(
+                            width: 300,
+                            child: Column(
+                              children: [
+                                CupertinoListSection.insetGrouped(
+                                  dividerMargin: -42,
+                                  backgroundColor: Colors.transparent,
+                                  children: [
+                                    CupertinoListTile.notched(
+                                      title: const Text('Name'),
+                                      leadingToTitle: 2.0,
+                                      leading: Container(),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    CupertinoListTile.notched(
+                                      title: const Text('Kind'),
+                                      leadingToTitle: 2.0,
+                                      leading: const SizedBox(),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    CupertinoListTile.notched(
+                                      title: const Text('Date'),
+                                      leadingToTitle: 2.0,
+                                      leading: const Icon(
+                                        CupertinoIcons.check_mark,
+                                        color: CupertinoColors.black,
+                                        size: 18.0,
+                                      ),
+                                      trailing: const Icon(
+                                        CupertinoIcons.chevron_down,
+                                        color: CupertinoColors.black,
+                                        size: 18.0,
+                                      ),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    CupertinoListTile.notched(
+                                      title: const Text('Size'),
+                                      leadingToTitle: 2.0,
+                                      leading: const SizedBox(),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    CupertinoListTile.notched(
+                                      title: const Text('Tags'),
+                                      leadingToTitle: 2.0,
+                                      leading: const SizedBox(),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 0.5,
+                          top: 415,
+                          child: SizedBox(
+                            width: 300,
+                            child: Column(
+                              children: [
+                                CupertinoListSection.insetGrouped(
+                                  dividerMargin: -42,
+                                  backgroundColor: Colors.transparent,
+                                  children: [
+                                    CupertinoListTile.notched(
+                                      title: const Text('Use groups'),
+                                      leadingToTitle: 2.0,
+                                      leading: Container(),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: const Icon(CupertinoIcons.square_grid_2x2),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([
+              Padding(
+                padding: const EdgeInsets.fromLTRB(18.0, 4.0, 18.0, 0),
+                child: CupertinoSearchTextField(controller: TextEditingController()),
+              ),
+            ]),
+          ),
+        ],
       ),
     );
   }
