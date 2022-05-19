@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/android_search_settings_screen.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class AndroidSettingsScreen extends StatefulWidget {
@@ -9,6 +11,14 @@ class AndroidSettingsScreen extends StatefulWidget {
 }
 
 class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
+  void goToAndroidSearchScreen() {
+    Navigator.of(context).push(
+      CupertinoPageRoute(
+        builder: (_) => const AndroidSearchSettingsScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,6 +88,9 @@ class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
                       SettingsSection(
                         tiles: [
                           SettingsTile.navigation(
+                            onPressed: (_) {
+                              goToAndroidSearchScreen();
+                            },
                             leading: const Icon(Icons.wifi),
                             title: const Text('Network & internet'),
                             value: const Text('Mobile, Wi-Fi, hotspot'),
@@ -87,6 +100,9 @@ class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
                       SettingsSection(
                         tiles: [
                           SettingsTile.navigation(
+                            onPressed: (_) {
+                              goToAndroidSearchScreen();
+                            },
                             leading: const Icon(Icons.devices),
                             title: const Text('Connected devices'),
                             value: const Text('Bluetooth, pairing'),
@@ -96,6 +112,9 @@ class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
                       SettingsSection(
                         tiles: [
                           SettingsTile.navigation(
+                            onPressed: (_) {
+                              goToAndroidSearchScreen();
+                            },
                             leading: const Icon(Icons.apps),
                             title: const Text('Apps'),
                             value: const Text('Assistant, recent apps, default apps'),
@@ -105,6 +124,9 @@ class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
                       SettingsSection(
                         tiles: [
                           SettingsTile.navigation(
+                            onPressed: (_) {
+                              goToAndroidSearchScreen();
+                            },
                             leading: const Icon(Icons.notifications_outlined),
                             title: const Text('Notifications'),
                             value: const Text('Notification history, conversations'),
@@ -114,6 +136,9 @@ class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
                       SettingsSection(
                         tiles: [
                           SettingsTile.navigation(
+                            onPressed: (_) {
+                              goToAndroidSearchScreen();
+                            },
                             leading: const Icon(Icons.battery_std),
                             title: const Text('Battery'),
                             value: const Text('100%'),
@@ -123,6 +148,9 @@ class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
                       SettingsSection(
                         tiles: [
                           SettingsTile.navigation(
+                            onPressed: (_) {
+                              goToAndroidSearchScreen();
+                            },
                             leading: const Icon(Icons.storage),
                             title: const Text('Storage'),
                             value: const Text('32% used - 69 GB free'),
@@ -132,6 +160,9 @@ class _AndroidSettingsScreenState extends State<AndroidSettingsScreen> {
                       SettingsSection(
                         tiles: [
                           SettingsTile.navigation(
+                            onPressed: (_) {
+                              goToAndroidSearchScreen();
+                            },
                             leading: const Icon(Icons.volume_up_rounded),
                             title: const Text('Storage'),
                             value: const Text('32% used - 69 GB free'),
