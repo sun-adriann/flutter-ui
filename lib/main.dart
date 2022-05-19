@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/ios_settings/ios_settings_screen.dart';
+import 'package:flutter_ui/ios_settings_screen.dart';
 
 void main() => runApp(const FlutterUiApp());
 

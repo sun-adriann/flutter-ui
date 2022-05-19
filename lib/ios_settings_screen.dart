@@ -1,4 +1,4 @@
-import 'package:flutter_ui/ios_popup/ios_popup_screen.dart';
+import 'package:flutter_ui/ios_popup_screen.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
