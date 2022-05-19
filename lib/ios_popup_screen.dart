@@ -1,6 +1,7 @@
 import 'package:cupertino_lists/cupertino_lists.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/android_settings_screen.dart';
 
 class IosPopupScreen extends StatefulWidget {
   const IosPopupScreen({Key? key}) : super(key: key);
@@ -10,6 +11,14 @@ class IosPopupScreen extends StatefulWidget {
 }
 
 class _IosPopupScreenState extends State<IosPopupScreen> {
+  void goToAndroidSettingsScreen() {
+    Navigator.of(context).pushReplacement(
+      CupertinoPageRoute(
+        builder: (_) => const AndroidSettingsScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -76,7 +85,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                         size: 22.0,
                                       ),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                     CupertinoListTile.notched(
@@ -89,7 +98,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                         size: 22.0,
                                       ),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                   ],
@@ -114,7 +123,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                       leadingToTitle: 2.0,
                                       leading: Container(),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                     CupertinoListTile.notched(
@@ -122,7 +131,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                       leadingToTitle: 2.0,
                                       leading: const SizedBox(),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                     CupertinoListTile.notched(
@@ -139,7 +148,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                         size: 18.0,
                                       ),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                     CupertinoListTile.notched(
@@ -147,7 +156,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                       leadingToTitle: 2.0,
                                       leading: const SizedBox(),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                     CupertinoListTile.notched(
@@ -155,7 +164,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                       leadingToTitle: 2.0,
                                       leading: const SizedBox(),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                   ],
@@ -180,7 +189,7 @@ class _IosPopupScreenState extends State<IosPopupScreen> {
                                       leadingToTitle: 2.0,
                                       leading: Container(),
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        goToAndroidSettingsScreen();
                                       },
                                     ),
                                   ],
