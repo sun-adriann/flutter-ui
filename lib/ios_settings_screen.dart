@@ -19,7 +19,7 @@ class _IosSettingsScreenState extends State<IosSettingsScreen> {
           const CupertinoSliverNavigationBar(
             border: null,
             backgroundColor: Color(0xFFF2F2F8),
-            transitionBetweenRoutes: true,
+            transitionBetweenRoutes: false,
             largeTitle: Text('Settings'),
           ),
           SliverList(

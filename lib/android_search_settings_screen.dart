@@ -36,18 +36,28 @@ class _AndroidSearchSettingsScreenState extends State<AndroidSearchSettingsScree
           ),
         ),
       ),
-      body: Center(
-        child: SizedBox(
-          height: 170,
-          child: Column(
-            children: const [
-              Icon(Icons.search, size: 32.0),
-              SizedBox(height: 14.0),
-              Text(
-                'Search settings',
-                style: TextStyle(fontSize: 20.0),
-              ),
-            ],
+      body: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushAndRemoveUntil(
+            CupertinoPageRoute(
+              builder: (_) => const IosSettingsScreen(),
+            ),
+            (_) => false,
+          );
+        },
+        child: Center(
+          child: SizedBox(
+            height: 170,
+            child: Column(
+              children: const [
+                Icon(Icons.search, size: 32.0),
+                SizedBox(height: 14.0),
+                Text(
+                  'Search settings',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ],
+            ),
           ),
         ),
       ),
